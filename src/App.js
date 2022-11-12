@@ -12,7 +12,7 @@ const { STRIKE } = RESULT;
 
 
 //전체적인 로직인 playGame()메소드를 App의 play()안에 적는다
-//그리고 playGame() 안에서 이제 전체적인 로직이 들어있는데
+//그리고 playGame() 안에 전체적인 로직이 들어있는데
 //이 전체적인 로직을 클래스별로 , 메소드별로 쪼개서 사용한다
 //클래스로 사용할땐 당연히 그 클래스의 메소드를 사용하는 것고 (static으로 사용해서 new없이 바로 사용)
 //메소드는 당연히 this.메소드명()으로 사용
@@ -39,6 +39,10 @@ class App {
   guess(computer) {
     Console.readLine('숫자를 입력해주세요 : ', (input) => {
 
+
+      //테스트 환경에서 toThrow로 받아주고 있기 때문에 다들 throw 해주고 있는데 여기에는 왜 
+      //try catch를 썼냐 하면, 아마 ValidationError의 에러들만 받아서 그 에러를 
+      //다시 던져주기 위해서 사용한 것 같다
 
       //사용자가 숫자를 입력하게 되면 그 숫자에 대한 예외처리
       try {
