@@ -1,6 +1,7 @@
 const Computer = require('../src/Computer');
 
 describe('Computer 클래스 테스트', () => {
+  
   test('서로 다른 숫자를 count개 생성해야 한다.', () => {
     const count = 7;
 
@@ -9,13 +10,17 @@ describe('Computer 클래스 테스트', () => {
     const computer = Computer.createUniqueNumbers(1, 9, count);
     const computerSet = new Set(computer);
 
-    expect(computer).toHaveLength(count);
-    expect(computerSet.size).toBe(count);
+    expect(computer).toHaveLength(count); //count만큼 숫자가 생성되는지 확인
+    expect(computerSet.size).toBe(count); //set을 통해 중복 확인
+    
 
+    //모든 값들이 다 숫자인지 확인
     computer.forEach((item) => {
       expect(Number.isInteger(item)).toBe(true);
-    });
+    }); 
+
   });
+
   test('범위 안의 숫자만 생성해야 한다.', () => {
     const start = 1;
     const end = 8;
